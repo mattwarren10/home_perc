@@ -6,10 +6,16 @@
   		<ul>
   			<li><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
   		</ul>
+  		<button>Create Project</button>
   	<% else %>
   		<ul>
   			<li><%= link_to "Log in", new_user_session_path %></li>
   			<li><%= link_to "Sign up", new_user_registration_path %></li>
   		</ul>	
   	<% end %>
+  	<%= form_for @search, url: {action: "search"} do |f| %>
+		<%= f.label :query %>
+		<%= f.text_field :query %>
+		<%= f.submit "Search" %>
+	<% end %>
 </header>

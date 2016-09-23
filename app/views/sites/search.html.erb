@@ -1,0 +1,12 @@
+<h1>Search results:</h1>
+<%= @search.query %>
+
+<% @list.each do |item| %>
+	<p>
+		<%= image_tag item[:image] %>
+		<%= item[:description] %>
+		
+		<%= item[:price] %>
+		<%= item[:merchant] %>
+	</p>
+<% end %>
