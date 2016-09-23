@@ -22,4 +22,7 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  adapter: postgresql
+  encoding: unicode
+  database: homeperc_production
+  password: <%= ENV['HOMEPERC_DATABASE_PASSWORD']

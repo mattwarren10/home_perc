@@ -4,7 +4,10 @@ require 'open-uri'
 class Search < ApplicationRecord
 	include HTTParty
 	def self.scrape_home_depot(input)
-		encoded_url = URI.encode("http://www.homedepot.com/s/#{input}?NCNI-5")
+		if input.include? " "
+			new_input = input.split(" ").join("+")
+		end
+		encoded_url = URI.encode("http://www.homedepot.com/s/#{new_input}?NCNI-5")
 		page = HTTParty.get(encoded_url)
 		parse_page = Nokogiri::HTML(page)
 		items_array = []
@@ -35,6 +38,9 @@ class Search < ApplicationRecord
 	end
 
 	def self.scrape_lowes(input)
+		if input.include? " "
+			new_input = input.split(" ").join("+")
+		end
 		encoded_url = URI.encode("http://www.lowes.com/search?searchTerm=#{input}")
 		page = HTTParty.get(encoded_url)
 		parse_page = Nokogiri::HTML(page)
