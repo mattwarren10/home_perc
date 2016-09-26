@@ -8,7 +8,7 @@ class ProjectsController < ApplicationController
 	end
 
 	def add_item
-		project = Project.find_by(id: params[:id])
+		project = Project.find_by(id: params[:project_id])
 		product = Product.new(
 			photo: params[:product][:photo],
 			description: params[:product][:description],
@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
 		project.products.push( product )
 		project.total_price += product.price
 		project.save
-		redirect_to "/users/projects"
+		flash[:success] = "Item added!"
 	end
 
 	def find_params 

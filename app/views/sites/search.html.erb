@@ -17,18 +17,18 @@
 	        	<form method="post" action="/users/projects/:id/add">
 	        		<input type="hidden" name="product[photo]" value="<%= item[:image] %>">
 	        		<input type="hidden" name="product[description]" value="<%= item[:description] %>">
-	        		<input type="hidden" name="product[price]" value="<%= item[:price] %>">
+	        		<input type="hidden" name="product[price]" value="<%= (item[:price].to_i) / 100 %>">
 	        		<input type="hidden" name="product[merchant]" value="<%= item[:merchant] %>">
 	        		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-					
-					<div class="dropdown">
-					<button class="js-add-item">Add</button>
-					  <div class="dropdown-content">
-					    <a href="#">Link 1</a>
-					    <a href="#">Link 2</a>
-					    <a href="#">Link 3</a>
-					  </div>
-					</div>
+					<a class="js-add-item">Add to</a>
+				  	<div class="dropdown-content">				
+				    	<% @projects.each do |project| %>
+				    		<button type="submit" name="project_id" value="<%= project.id%>"><%= project.title %></button>
+				    		<form>
+				    			
+				    		</form>
+				    	<% end %>
+				 	 </div>
 				</form>	
 			</td>
 	      </tr>

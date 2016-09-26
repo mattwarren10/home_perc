@@ -1,12 +1,14 @@
 $(document).on("turbolinks:load", function () {
 	$('.dropdown-content').hide();
-	$('.js-add-item').hover(
+	$('.js-add-item').click(
 		function (){
-			$('.dropdown-content').show();
-		},
-		function () {
-			$('.dropdown-content').hide();
+			$('.dropdown-content').toggle();
 		})
+	// $('.js-add-item').click(
+	// 	function () {
+	// 		$('.dropdown-content').toggle()
+	// 	})
+		
 
 	// Close the dropdown menu if the user clicks outside of it
 	// window.onclick = function(event) {

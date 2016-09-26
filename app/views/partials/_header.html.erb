@@ -1,6 +1,6 @@
 <!-- app/views/other_stuff/_header.html.erb -->
 <header>
-	<h1>HomePerc</h1>
+	<h1><a href="/">HomePerc</a></h1>
 	<% if user_signed_in? %>
   		<p>Welcome <%= current_user.name %></p>
   		<ul>
@@ -14,8 +14,8 @@
   		</ul>	
   	<% end %>
   	<%= form_for @search, :url => search_path do |f| %>
-		<%= f.label :query %>
-		<%= f.text_field :query %>
+  		<%= f.label :query %>
+  		<%= f.text_field :query %>
 		<%= f.submit "Search" %>
 	<% end %>
 </header>

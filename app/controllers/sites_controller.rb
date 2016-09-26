@@ -7,6 +7,7 @@ class SitesController < ApplicationController
 		@search = Search.new(search_params)
 		@list = Search.scrape_home_depot(@search.query)
 		@list += Search.scrape_lowes(@search.query)
+		@projects = current_user.projects
 	end
 
 	def search_params
