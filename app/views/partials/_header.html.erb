@@ -5,8 +5,8 @@
   		<p>Welcome <%= current_user.name %></p>
   		<ul>
   			<li><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
+        <li><%= link_to "Create Project", new_users_project_path %></li>
   		</ul>
-  		<button>Create Project</button>
   	<% else %>
   		<ul>
   			<li><%= link_to "Log in", new_user_session_path %></li>
