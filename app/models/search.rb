@@ -24,7 +24,8 @@ class Search < ApplicationRecord
 				description: description,
 				image: img_src,
 				model: model_number,
-				price: price
+				price: price,
+				merchant: "Home Depot"
 			
 			}
 
@@ -48,7 +49,8 @@ class Search < ApplicationRecord
 			item = { 
 				description: description,
 				image: img_src,
-				price: price
+				price: price,
+				merchant: "Lowe's"
 			}
 
 			items_array.push(item)

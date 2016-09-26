@@ -1,15 +1,22 @@
 <h3>Search results:</h3>
 <%= @search.query %>
-
-<% @list.each do |item| %>
-	<p>
-		<%= image_tag item[:image] %>
-		<%= item[:description] %>
-		
-		<%= item[:price] %>
-		<%= item[:merchant] %>
-		<!-- <form method="post" action="">
-			
-		</form> -->
-	</p>
-<% end %>
+<table>
+      <tr>
+        <th scope="col">Image</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col">Merchant</th>
+      </tr>
+	<% @list.each do |item| %>
+	      <tr>
+	        <th scope="row"><%= image_tag item[:image] %></th>
+	        <td><%= truncate(item[:description], :length => 40) %></td>
+	        <td><%= item[:price] %></td>
+	        <td><%= item[:merchant] %></td>
+	      </tr>
+	    
+			<!-- <form method="post" action="">
+				
+			</form> -->	
+	<% end %>
+</table>
