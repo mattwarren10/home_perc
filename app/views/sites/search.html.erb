@@ -13,10 +13,13 @@
 	        <td><%= truncate(item[:description], :length => 40) %></td>
 	        <td><%= item[:price] %></td>
 	        <td><%= item[:merchant] %></td>
+	        <td>
+	        	<form method="post" action="/add">
+					<button>Add</button>
+				</form>	
+			</td>
 	      </tr>
 	    
-			<!-- <form method="post" action="">
-				
-			</form> -->	
+			
 	<% end %>
 </table>
