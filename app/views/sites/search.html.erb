@@ -14,8 +14,21 @@
 	        <td><%= item[:price] %></td>
 	        <td><%= item[:merchant] %></td>
 	        <td>
-	        	<form method="post" action="/add">
-					<button>Add</button>
+	        	<form method="post" action="/users/projects/:id/add">
+	        		<input type="hidden" name="product[photo]" value="<%= item[:image] %>">
+	        		<input type="hidden" name="product[description]" value="<%= item[:description] %>">
+	        		<input type="hidden" name="product[price]" value="<%= item[:price] %>">
+	        		<input type="hidden" name="product[merchant]" value="<%= item[:merchant] %>">
+	        		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+					
+					<div class="dropdown">
+					<button class="js-add-item">Add</button>
+					  <div class="dropdown-content">
+					    <a href="#">Link 1</a>
+					    <a href="#">Link 2</a>
+					    <a href="#">Link 3</a>
+					  </div>
+					</div>
 				</form>	
 			</td>
 	      </tr>

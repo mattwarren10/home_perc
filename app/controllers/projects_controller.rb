@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
 	def index
-		@projects = Project.all
+		@projects = current_user.projects
 	end
 
 	def show
@@ -9,10 +9,19 @@ class ProjectsController < ApplicationController
 
 	def add_item
 		project = Project.find_by(id: params[:id])
-		product = Product.new
+		product = Product.new(
+			photo: params[:product][:photo],
+			description: params[:product][:description],
+			price: params[:product][:price],
+			merchant: params[:product][:merchant]
+		)
 		project.products.push( product )
 		project.total_price += product.price
 		project.save
-		redirct "/users/projects"
+		redirect_to "/users/projects"
+	end
+
+	def find_params 
+
 	end
 end

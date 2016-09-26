@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
   resource :users do 
   	resources :projects	
-  	post "/users/projects/:id/add" => "projects#add_item"
+  	post "/projects/:id/add" => "projects#add_item"
   end
   get '/users/:id', to: 'users#show'
   post '/search', to: 'sites#search'
