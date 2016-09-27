@@ -29,6 +29,17 @@ class ProjectsController < ApplicationController
 		@project = Project.find(params[:id])
 	end
 
+	def update
+		project = Project.find(params[:id])
+		project.user = current_user
+		if project.update(project_params)
+			redirect_to users_projects_path
+		else
+			redirect_to edit_users_project_path
+		end
+
+	end
+
 	def add_item
 		project = Project.find_by(id: params[:project_id])
 		product = Product.new(
@@ -47,5 +58,10 @@ class ProjectsController < ApplicationController
 		project = Project.find(params[:id])
 		project.destroy
 		redirect_to users_projects_path
+	end
+
+	private
+	def project_params
+		params.require(:project).permit(:title)
 	end
 end

@@ -1,5 +1,5 @@
 <h2>Edit Project</h2>
-<%= form_for @project, url: "/users/projects" do |f| %>
+<%= form_for @project, url: {action: "update"} do |f| %>
 	<%= f.label :title %>
 	<%= f.text_field :title %>
 	
