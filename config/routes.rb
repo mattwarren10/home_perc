@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   end
   get '/users/:id', to: 'users#show'
   get '/search', to: 'sites#search'
+  get '/sort_by', to: 'sites#sort_by'
   
 end

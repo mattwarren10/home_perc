@@ -17,7 +17,7 @@
         <th scope="col">Price</th>
         <th scope="col">Merchant</th>
       </tr>
-	<% @list.each do |item| %>
+	<% @sorted_list.each do |item| %>
 	      <tr>
 	        <th scope="row"><%= image_tag item[:image] %></th>
 	        <td><%= truncate(item[:description], :length => 40) %></td>
@@ -34,9 +34,6 @@
 				  	<div class="dropdown-content">				
 				    	<% @projects.each do |project| %>
 				    		<button type="submit" name="project_id" value="<%= project.id%>"><%= project.title %></button>
-				    		<form>
-				    			
-				    		</form>
 				    	<% end %>
 				 	 </div>
 				</form>	
