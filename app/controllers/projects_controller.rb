@@ -11,6 +11,24 @@ class ProjectsController < ApplicationController
 		@project = Project.new
 	end
 
+	def create
+		
+		project = Project.new(
+			title: params[:project][:title]
+		)
+		project.user = current_user
+		if project.save
+			redirect_to users_projects_path, :notice => "Your project was saved!"
+		else
+			@project = project
+			render "new"
+		end
+	end
+
+	def edit
+		@project = Project.find(params[:id])
+	end
+
 	def add_item
 		project = Project.find_by(id: params[:project_id])
 		product = Product.new(
@@ -23,5 +41,11 @@ class ProjectsController < ApplicationController
 		project.total_price += product.price
 		project.save
 		flash[:success] = "Item added!"
+	end
+
+	def destroy
+		project = Project.find(params[:id])
+		project.destroy
+		redirect_to users_projects_path
 	end
 end

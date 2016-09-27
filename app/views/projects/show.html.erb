@@ -1,4 +1,4 @@
-<h2>Project: <%= @project.title %></h2>
+<h2>Project: <%= link_to @project.title, edit_users_project_path %></h2>
 <table>
       <tr>
         <th scope="col">Image</th>
@@ -10,9 +10,9 @@
 		<tr>
 			<td><%= image_tag product.photo %></td>
 			<td><%= product.description %></td>
-			<td><%= product.price %></td>
+			<td>$<%= product.price %></td>
 			<td><%= product.merchant %></td>
 		</tr>
 	<% end %>
 </table>
-<h3>Total Cost: <%= @project.total_price %></h3>
+<h3>Total Cost: $<%= @project.total_price %></h3>

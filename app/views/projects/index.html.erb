@@ -1,6 +1,14 @@
 
-<ul>
+<table>
+	<tr>
+		<th>Project title</th>
+		<th>Options</th>
+	</tr>
 	<% @projects.each do |project| %>
-		<li><%= link_to project.title, users_project_path(project) %></li>
+	<tr>
+		<td><%= link_to project.title, users_project_path(project) %></td>
+		<td><%= link_to "Delete", users_project_path(project), method: "delete", data: { confirm: "Are you sure you want to delete \"#{project.title}\"?" } %></td>
+	</tr>
 	<% end %>
-</ul>
+</table>
+

@@ -1,5 +1,14 @@
 <h2>New Project</h2>
-<%= form_for @project, url: "/users/projects" do |f| %>
+
+<% if @project.errors.any? %>
+  <ul>
+    <% @project.errors.full_messages.each do |error_message| %>
+      <li> <%= error_message %> </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @project, url: {action: "create"} do |f| %>
 	<%= f.label :title %>
 	<%= f.text_field :title %>
 	
