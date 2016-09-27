@@ -1,4 +1,4 @@
-require 'Nokogiri'
+require 'nokogiri'
 require 'open-uri'
 
 class Search < ApplicationRecord
@@ -59,7 +59,7 @@ class Search < ApplicationRecord
 			item = { 
 				description: description,
 				image: img_src,
-				price: price,
+				price: nil,
 				merchant: "Lowe's"
 			}
 

@@ -5,9 +5,10 @@ class SitesController < ApplicationController
 
 	def search
 		@search = Search.new(search_params)
-		puts "AAAAAAAAAAAAAAAA"
+		puts "XXXXXXXXXXXXXXXXX"
 		puts search_params
 		puts search_params[:query]
+		puts "YYYYYYYYYYYYYYYYY"
 		@list = Search.scrape_home_depot(@search.query)
 		@list += Search.scrape_lowes(@search.query)
 		@projects = current_user.projects
@@ -23,13 +24,16 @@ class SitesController < ApplicationController
 		@list = Search.scrape_home_depot(params[:search_term])
 		@list += Search.scrape_lowes(params[:search_term])
 		@projects = current_user.projects
-		@term = params[:sort_term]
-		@sorted_list = @list.sort { |a, b| a[@term] <=> b[@term]}
-		puts "AAAAAAAAAAAAAAAA"
-		@sorted_list.each do |x| 
-			puts x[:price]
+		term = params[:sort_term].to_sym
+		@sorted_list = @list.sort do |a, b| 
+			if a[term] == nil 
+				1 
+			elsif b[term] == nil
+				-1
+			else
+				a[term] <=> b[term]
+			end
 		end
-		puts "AAAAAAAAAAAAAAAA"
 		render :sort_by
 	end
 end
