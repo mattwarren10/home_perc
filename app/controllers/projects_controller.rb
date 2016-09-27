@@ -45,10 +45,11 @@ class ProjectsController < ApplicationController
 		product = Product.new(
 			photo: params[:product][:photo],
 			description: params[:product][:description],
-			price: (params[:product][:price].match(/\d+/)[0].to_f / 100),
+			price: (params[:product][:price].match(/\d+/)[0].to_i / 100),
 			merchant: params[:product][:merchant]
 		)
 		project.products.push( product )
+		project.total_price = 0
 		project.total_price += product.price
 		project.save
 		flash[:success] = "Item added!"
