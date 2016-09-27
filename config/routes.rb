@@ -7,6 +7,6 @@ Rails.application.routes.draw do
   	post "/projects/:id/add" => "projects#add_item"
   end
   get '/users/:id', to: 'users#show'
-  post '/search', to: 'sites#search'
+  get '/search', to: 'sites#search'
   
 end
