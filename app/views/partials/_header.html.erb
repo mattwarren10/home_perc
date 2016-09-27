@@ -2,19 +2,19 @@
 <header>
 	<h1><a href="/">HomePerc</a></h1>
 	<% if user_signed_in? %>
-  		<p>Welcome <%= current_user.name %></p>
-  		<ul>
-  			<li><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
-        <li><%= link_to "Create Project", new_users_project_path %></li>
-        <li><%= link_to "View Projects", users_projects_path %></li>
-  		</ul>
-  	<% else %>
-  		<ul>
-  			<li><%= link_to "Log in", new_user_session_path %></li>
-  			<li><%= link_to "Sign up", new_user_registration_path %></li>
-  		</ul>	
-  	<% end %>
-  	<%= form_for @search, :url => search_path, :html => { :method => 'GET' } do |f| %>
+		<ul class="nav">
+      <li class="nav-li">Welcome <%= current_user.name %></li>
+			<li class="nav-li"><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
+      <li class="nav-li"><%= link_to "Create Project", new_users_project_path %></li>
+      <li class="nav-li"><%= link_to "View Projects", users_projects_path %></li>
+		</ul>
+	<% else %>
+		<ul class="nav">
+			<li class="nav-li"><%= link_to "Log in", new_user_session_path %></li>
+			<li class="nav-li"><%= link_to "Sign up", new_user_registration_path %></li>
+		</ul>	
+	<% end %>
+  	<%= form_for @search, :url => search_path, :html => { :method => 'GET', :class => 'search-form' } do |f| %>
   		<%= f.label :query %>
   		<%= f.text_field :query %>
 		<%= f.submit "Search" %>

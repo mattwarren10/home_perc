@@ -1,3 +1,47 @@
 // Place all the styles related to the Sites controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+html,
+body,
+div {
+  height: 100%;
+}
+
+body {
+  background-image: url("tools-background.jpg");
+  background-size: cover;
+}
+
+div {
+  background-image: linear-gradient(#fff, transparent);
+}
+header {
+	
+}
+h1 {
+	display: inline-block;
+	float: left;
+}
+
+.nav {
+	float: left;
+}
+
+.nav-li{
+	float: left;
+}
+
+.search-form {
+	float: right;
+}
+
+.welcome-statement {
+	display: block;
+	float: left;
+}
+
+footer {
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+}
