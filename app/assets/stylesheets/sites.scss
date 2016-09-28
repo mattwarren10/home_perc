@@ -8,7 +8,7 @@ body,
 }
 
 body {
-  color: black;
+  color: #444;
 }
 
 .bg-img {
@@ -31,12 +31,17 @@ h2 {
 
 a:link,
 a:visited {
-	color: black;
+	color: #aaa;
+}
+
+a:hover {
+	color: #444;
 }
 
 .header-n-nav {
 	overflow: auto;
 	display: fixed;
+	background-color: #000;
 }
 
 .nav {
@@ -58,6 +63,12 @@ a:visited {
 	float: right;
 	padding: 15px;
   	transition: box-shadow 0.3s, border 0.3s;
+}
+
+input[type=submit] {
+	background-color: #eee;
+	color: #444;
+	border: none;
 }
 
 .welcome-statement {
@@ -83,4 +94,8 @@ footer {
 	text-align: center;
 	color: black;
 	margin-left: 40%;
+}
+
+footer {
+	color: #444;
 }
