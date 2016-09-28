@@ -5,6 +5,7 @@
         <th scope="col">Description</th>
         <th scope="col">Price</th>
         <th scope="col">Merchant</th>
+        <th scope="col">Option</th>
       </tr>
 	<% @project.products.each do |product| %>
 		<tr>
@@ -12,6 +13,7 @@
 			<td><%= product.description %></td>
 			<td>$<%= product.price %></td>
 			<td><%= product.merchant %></td>
+			<td><%= link_to "Delete",  destroy_item_path(@project, product) %></td>
 		</tr>
 	<% end %>
 </table>

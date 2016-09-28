@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show'
   get '/search', to: 'sites#search'
   get '/sort_by', to: 'sites#sort_by'
+  get '/project/:id/products/:product_id', to: 'products#destroy', as: 'destroy_item'
   
 end
