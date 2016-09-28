@@ -1,5 +1,4 @@
-<h3>Search results:</h3>
-<%= @search.query %>
+<h3>Search results for: <%= @search.query %></h3>
 <form method="get" action="/sort_by">
 	<select name="sort_term">
 		<option value="price">Price</option>
@@ -16,6 +15,7 @@
         <th scope="col">Description</th>
         <th scope="col">Price</th>
         <th scope="col">Merchant</th>
+        <th scope="col">Options</th>
       </tr>
 	<% @sorted_list.each do |item| %>
 	      <tr>

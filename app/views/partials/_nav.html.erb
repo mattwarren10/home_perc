@@ -6,13 +6,13 @@
 	<% if user_signed_in? %>
 		<ul class="nav">
       <li class="nav-li user-welcome">Welcome <%= current_user.name %></li>
-	  <li class="nav-li"><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
+	  <li class="nav-li log-out"><%= link_to "Log out", destroy_user_session_path, method: "delete" %></li>
       <li class="nav-li"><%= link_to "Create Project", new_users_project_path %></li>
       <li class="nav-li"><%= link_to "View Projects", users_projects_path %></li>
 		</ul>
 	<% else %>
 		<ul class="nav">
-			<li class="nav-li"><%= link_to "Log in", new_user_session_path %></li>
+			<li class="nav-li log-in"><%= link_to "Log in", new_user_session_path %></li>
 			<li class="nav-li"><%= link_to "Sign up", new_user_registration_path %></li>
 		</ul>	
 	<% end %>
