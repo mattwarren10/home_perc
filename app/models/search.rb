@@ -24,12 +24,15 @@ class Search < ApplicationRecord
 			description = parse_page.css('div.pod-plp__description a')[index].text.strip
 			model_number = parse_page.css('div.pod-plp__model')[index].text.strip
 			price = parse_page.css('div.price')[index].text.strip.match(/\d+/)[0].to_i / 100
+			link = "http://homedepot.com"
+			link += parse_page.css('div.pod-plp__description a')[index]['href']
 
 			item = { 
 				description: description,
 				image: img_src,
 				model: model_number,
 				price: price,
+				link: link,
 				merchant: "Home Depot"
 			
 			}
