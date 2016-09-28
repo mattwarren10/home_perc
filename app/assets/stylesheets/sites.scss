@@ -8,12 +8,13 @@ div {
 }
 
 body {
-  // background-image: url("tools-background.jpg");
-  background-size: cover;
+  
 }
 
 .bg-img {
-	background-image: linear-gradient(#fff, transparent);
+	// background-image: linear-gradient(#fff, transparent);
+	background-image: url("tools-workbench.jpg");
+  	background-size: cover;
 }
 header {
 	
@@ -21,6 +22,11 @@ header {
 h1 {
 	display: inline-block;
 	float: left;
+}
+
+a:link,
+a:visited {
+	color: white;
 }
 
 .nav {
@@ -41,6 +47,7 @@ h1 {
 	position: absolute;
 	top: 200px;
 	left: 125px;
+	color: white;
 	
 }
 
