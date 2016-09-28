@@ -2,7 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 html,
-body {
+body,
+.bg-img {
   height: 100%;
 }
 
@@ -76,4 +77,5 @@ footer {
 	bottom: 0;
 	text-align: center;
 	color: black;
+	margin-left: 40%;
 }
