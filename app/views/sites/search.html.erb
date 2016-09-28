@@ -22,7 +22,7 @@
 		<% @list.each do |item| %>
 		      <tr>
 		        <th scope="row"><%= image_tag item[:image] %></th>
-		        <td><%= link_to truncate(item[:description], :length => 40), item[:link] %></td>
+		        <td><%= link_to truncate(item[:description], :length => 40), item[:link], target: "_blank" %></td>
 		        <td><%= item[:price] %></td>
 		        <td><%= item[:merchant] %></td>
 		        <td>
