@@ -1,48 +1,50 @@
-<h3>Search results:</h3>
-<%= @search.query %>
-<form method="get" action="/sort_by">
-	<select name="sort_term">
-		<option value="price">Price</option>
-		<option value="description">Description</option>
-		<option value="merchant">Merchant</option>
-	</select>
-	<input type="hidden" name="search_term" value="<%= @search.query %>">
-	<button>Submit</button>
+<div class="white-bg">
+	<h3>Search results:</h3>
+	<%= @search.query %>
+	<form method="get" action="/sort_by">
+		<select name="sort_term">
+			<option value="price">Price</option>
+			<option value="description">Description</option>
+			<option value="merchant">Merchant</option>
+		</select>
+		<input type="hidden" name="search_term" value="<%= @search.query %>">
+		<button>Submit</button>
 
-</form>
-<table>
-      <tr>
-        <th scope="col">Image</th>
-        <th scope="col">Description</th>
-        <th scope="col">Price</th>
-        <th scope="col">Merchant</th>
-      </tr>
-	<% @list.each do |item| %>
+	</form>
+	<table>
 	      <tr>
-	        <th scope="row"><%= image_tag item[:image] %></th>
-	        <td><%= truncate(item[:description], :length => 40) %></td>
-	        <td><%= item[:price] %></td>
-	        <td><%= item[:merchant] %></td>
-	        <td>
-	        	<form method="post" action="/users/projects/:id/add">
-	        		<input type="hidden" name="product[photo]" value="<%= item[:image] %>">
-	        		<input type="hidden" name="product[description]" value="<%= item[:description] %>">
-	        		<input type="hidden" name="product[price]" value="<%= item[:price] %>">
-	        		<input type="hidden" name="product[merchant]" value="<%= item[:merchant] %>">
-	        		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
-					<a class="js-add-item">Add to</a>
-				  	<div class="dropdown-content">				
-				    	<% @projects.each do |project| %>
-				    		<button type="submit" name="project_id" value="<%= project.id%>"><%= project.title %></button>
-				    		<form>
-				    			
-				    		</form>
-				    	<% end %>
-				 	 </div>
-				</form>	
-			</td>
+	        <th scope="col">Image</th>
+	        <th scope="col">Description</th>
+	        <th scope="col">Price</th>
+	        <th scope="col">Merchant</th>
 	      </tr>
-	    
-			
-	<% end %>
-</table>
+		<% @list.each do |item| %>
+		      <tr>
+		        <th scope="row"><%= image_tag item[:image] %></th>
+		        <td><%= truncate(item[:description], :length => 40) %></td>
+		        <td><%= item[:price] %></td>
+		        <td><%= item[:merchant] %></td>
+		        <td>
+		        	<form method="post" action="/users/projects/:id/add">
+		        		<input type="hidden" name="product[photo]" value="<%= item[:image] %>">
+		        		<input type="hidden" name="product[description]" value="<%= item[:description] %>">
+		        		<input type="hidden" name="product[price]" value="<%= item[:price] %>">
+		        		<input type="hidden" name="product[merchant]" value="<%= item[:merchant] %>">
+		        		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+						<a class="js-add-item">Add to</a>
+					  	<div class="dropdown-content">				
+					    	<% @projects.each do |project| %>
+					    		<button type="submit" name="project_id" value="<%= project.id%>"><%= project.title %></button>
+					    		<form>
+					    			
+					    		</form>
+					    	<% end %>
+					 	 </div>
+					</form>	
+				</td>
+		      </tr>
+		    
+				
+		<% end %>
+	</table>
+</div>

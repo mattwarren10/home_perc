@@ -8,12 +8,12 @@ div {
 }
 
 body {
-  background-image: url("tools-background.jpg");
+  // background-image: url("tools-background.jpg");
   background-size: cover;
 }
 
-div {
-  background-image: linear-gradient(#fff, transparent);
+.bg-img {
+	background-image: linear-gradient(#fff, transparent);
 }
 header {
 	
@@ -38,6 +38,14 @@ h1 {
 .welcome-statement {
 	display: block;
 	float: left;
+	position: absolute;
+	top: 200px;
+	left: 125px;
+	
+}
+
+.white-bg {
+	background-color: #fff;
 }
 
 footer {
