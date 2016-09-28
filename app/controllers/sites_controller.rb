@@ -5,10 +5,6 @@ class SitesController < ApplicationController
 
 	def search
 		@search = Search.new(search_params)
-		puts "XXXXXXXXXXXXXXXXX"
-		puts search_params
-		puts search_params[:query]
-		puts "YYYYYYYYYYYYYYYYY"
 		@list = Search.scrape_home_depot(@search.query)
 		@list += Search.scrape_lowes(@search.query)
 		@projects = current_user.projects

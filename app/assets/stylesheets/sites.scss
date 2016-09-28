@@ -2,13 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 html,
-body,
-div {
+body {
   height: 100%;
 }
 
 body {
-  
+  color: black;
 }
 
 .bg-img {
@@ -17,6 +16,7 @@ body {
   	background-size: cover;
 }
 header {
+	margin-right: 40%;
 	
 }
 h1 {
@@ -24,26 +24,42 @@ h1 {
 	float: left;
 }
 
+h2 { 
+	margin: 0;
+}
+
 a:link,
 a:visited {
-	color: white;
+	color: black;
+}
+
+.header-n-nav {
+	overflow: auto;
 }
 
 .nav {
-	float: left;
+	background-color: transparent;
+	padding-top: 12px;
+	// margin-left: 15%;
+	float: right;
 }
 
 .nav-li{
 	float: left;
 }
 
+.user-welcome {
+	padding: 10px 15px;
+}
+
 .search-form {
 	float: right;
+	padding: 15px;
+  	transition: box-shadow 0.3s, border 0.3s;
 }
 
 .welcome-statement {
 	display: block;
-	float: left;
 	position: absolute;
 	top: 200px;
 	left: 125px;
@@ -59,4 +75,5 @@ footer {
 	position: fixed;
 	bottom: 0;
 	text-align: center;
+	color: black;
 }

@@ -1,6 +1,6 @@
 <!-- <div class="white-bg"> -->
-	<h3>Search results:</h3>
-	<%= @search.query %>
+	<h3>Search results for: <%= @search.query %></h3>
+	
 	<form method="get" action="/sort_by">
 		<select name="sort_term">
 			<option value="price">Price</option>
