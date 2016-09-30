@@ -35,7 +35,7 @@
 						<a class="js-add-item">Add to</a>
 					  	<div class="dropdown-content">				
 					    	<% @projects.each do |project| %>
-					    		<button type="submit" name="project_id" value="<%= project.id%>"><%= link_to project.title, users_projects_path %></button>
+					    		<button type="submit" name="project_id" value="<%= project.id%>"><%= project.title %></button>
 					    		<form>
 					    			
 					    		</form>
