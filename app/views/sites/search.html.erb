@@ -34,6 +34,7 @@
 		        		<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
 						<a class="js-add-item">Add to</a>
 					  	<div class="dropdown-content">				
+					  		<%= link_to "Create Project", new_users_project_path %>
 					    	<% @projects.each do |project| %>
 					    		<button type="submit" name="project_id" value="<%= project.id%>"><%= project.title %></button>
 					    		<form>
