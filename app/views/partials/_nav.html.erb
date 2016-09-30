@@ -1,6 +1,6 @@
 <nav>
 	<%= form_for @search, :url => search_path, :html => { :method => 'GET', :class => 'search-form' } do |f| %>
-  		<%= f.text_field :query %>
+  		<%= f.text_field :query, placeholder: "Be specific.." %>
 		<%= f.submit "Search" %>
 	<% end %>
 	<% if user_signed_in? %>
