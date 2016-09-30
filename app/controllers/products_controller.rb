@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
 		product = Product.find(params[:product_id])
 		project = Project.find(params[:id])
 		product.destroy
+		project.total_price -= product.price
 		redirect_to users_project_path(project.id)
 	end
 end

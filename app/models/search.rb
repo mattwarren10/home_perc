@@ -58,7 +58,7 @@ class Search < ApplicationRecord
 			img_src = parse_page.css('div.product-container img.js-pl-lazy-load-image')[index]['data-src'].strip
 			description = parse_page.css('p.product-title')[index].text.strip
 			
-			price = parse_page.css("div.product-container")[index].text.strip
+			# price = parse_page.css("div.v-spacing-mini span")[index].text.strip
 			item = { 
 				description: description,
 				image: img_src,

@@ -23,7 +23,7 @@
 		      <tr>
 		        <th scope="row"><%= image_tag item[:image] %></th>
 		        <td><%= link_to truncate(item[:description], :length => 40), item[:link], target: "_blank" %></td>
-		        <td><%= item[:price] %></td>
+		        <td>$<%= item[:price] %></td>
 		        <td><%= item[:merchant] %></td>
 		        <td>
 		        	<form method="post" action="/users/projects/:id/add">
@@ -35,7 +35,7 @@
 						<a class="js-add-item">Add to</a>
 					  	<div class="dropdown-content">				
 					    	<% @projects.each do |project| %>
-					    		<button type="submit" name="project_id" value="<%= project.id%>"><%= project.title %></button>
+					    		<button type="submit" name="project_id" value="<%= project.id%>"><%= link_to project.title, users_projects_path %></button>
 					    		<form>
 					    			
 					    		</form>
