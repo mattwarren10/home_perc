@@ -52,6 +52,7 @@ class ProjectsController < ApplicationController
 		project.total_price += product.price
 		project.save
 		flash[:success] = "Item added!"
+		redirect_to users_project_path(project)
 	end
 
 	def destroy
