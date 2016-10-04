@@ -1,3 +1,6 @@
+<% if flash[:success] %>
+    <div class="alert-success"><%= flash[:success] %></div>
+<% end %>
 <h2>Project: <%= link_to @project.title, edit_users_project_path %></h2>
 <p>Use the search box to add products.</p>
 <table>
