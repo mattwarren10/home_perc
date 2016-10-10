@@ -15,10 +15,10 @@ class Search < ApplicationRecord
 		items_array = []
 		index = 0 
 		while index < 24 do
-			if parse_page.css('div.product-image img.stretchy')[index]['data-original']
-				img_src = parse_page.css('div.product-image img.stretchy')[index]['data-original'].strip
+			if parse_page.css('div.plp-pod__image img.stretchy')[index]['data-original']
+				img_src = parse_page.css('div.plp-pod__image img.stretchy')[index]['data-original'].strip
 			else
-				img_src = parse_page.css('div.product-image img.stretchy')[index]['src'].strip
+				img_src = parse_page.css('div.plp-pod__image img.stretchy')[index]['src'].strip
 			end
 
 			description = parse_page.css('div.pod-plp__description a')[index].text.strip
@@ -58,7 +58,7 @@ class Search < ApplicationRecord
 			img_src = parse_page.css('div.product-container img.js-pl-lazy-load-image')[index]['data-src'].strip
 			description = parse_page.css('p.product-title')[index].text.strip
 			
-			# price = parse_page.css("li.product-wrapper span.h5")[index].text.strip
+			# price = parse_page.css("div.v-spacing-mini span.h5")[index].text.strip
 			item = { 
 				description: description,
 				image: img_src,
