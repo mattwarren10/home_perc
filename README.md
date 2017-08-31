@@ -1,24 +1,6 @@
-# README
+# HomePerc
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Key Features
+- Search engine for users to shop housing materials across home improvement warehouse stores
+- Web scraper (Nokogiri gem) to aggregate data from online stores such as Home Depot and Lowe's
+- Customize user email and password using Devise gem
